@@ -64,6 +64,7 @@
 
 ifneq ($(TARGET_NO_KERNEL),true)
 ifneq ($(TARGET_NO_KERNEL_OVERRIDE),true)
+ifeq ($(LOCAL_KERNEL),)
 
 ## Externally influenced variables
 KERNEL_SRC := $(TARGET_KERNEL_SOURCE)
@@ -379,4 +380,5 @@ dtboimage: $(INSTALLED_DTBOIMAGE_TARGET)
 dtbimage: $(INSTALLED_DTBIMAGE_TARGET)
 
 endif # TARGET_NO_KERNEL_OVERRIDE
+endif # LOCAL_KERNEL
 endif # TARGET_NO_KERNEL
